@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="id" data-era="2026">
+<head>
+  <meta charset="UTF-8" />
+  <script>document.documentElement.classList.add('js');</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Preview: Paspor Aksi — REKA</title>
+  <link rel="stylesheet" href="../shared/variables.css" />
+  <link rel="stylesheet" href="../shared/base.css" />
+  <link rel="stylesheet" href="../shared/buttons.css" />
+  <link rel="stylesheet" href="komitmen.css" />
+  <link rel="stylesheet" href="../shared/mobile.css" />
+</head>
+<body>
+  <div id="confetti-layer" class="confetti-layer" aria-hidden="true"></div>
+  <section id="komitmen" class="section section-alt">
+      <div class="container">
+        <div class="section-head">
+          <span class="mono-tag">Paspor aksi</span>
+          <h2>Cetak Paspor Aksi REKA Milikmu</h2>
+          <p>Kustomisasi identitas, peran inovator, dan warna kartu aksimu. Lalu <strong>tekan & tahan tombol selama 1,5 detik</strong> untuk mengunci komitmen dan mengunduh kartu <code>.PNG</code> berisi QR yang bisa discan.</p>
+        </div>
+
+        <div class="commit-grid">
+          <div class="commit-form-card">
+            <div class="form-row-2">
+              <div>
+                <label class="field-label" for="user-name-input">Nama Pelajar / Tim</label>
+                <input type="text" id="user-name-input" class="tactile-input" placeholder="Contoh: Raka Pratama" maxlength="24" />
+              </div>
+              <div>
+                <label class="field-label" for="user-school-input">Asal Sekolah</label>
+                <input type="text" id="user-school-input" class="tactile-input" placeholder="Contoh: SMAN 1 Nusantara" maxlength="26" />
+              </div>
+            </div>
+
+            <div class="form-row-2">
+              <div>
+                <label class="field-label" for="user-role-select">Lencana Peran</label>
+                <select id="user-role-select" class="tactile-input">
+                  <option value=" PIONIR ENERGI SURYA"> Pionir Energi Surya</option>
+                  <option value=" ARSITEK SIRKULAR"> Arsitek Sirkular</option>
+                  <option value=" PENGGERAK MOBILITAS"> Penggerak Mobilitas</option>
+                  <option value=" KURATOR EKOSISTEM"> Kurator Ekosistem</option>
+                </select>
+              </div>
+              <div>
+                <span class="field-label">Tema Warna Kartu</span>
+                <div class="theme-dots" id="card-theme-picker">
+                  <button type="button" class="theme-dot active" data-theme="emerald" style="background:#1B6B3A;" title="Zamrud 2035"></button>
+                  <button type="button" class="theme-dot" data-theme="terracotta" style="background:#C84B31;" title="Terakota Bold"></button>
+                  <button type="button" class="theme-dot" data-theme="obsidian" style="background:#081838;" title="Obsidian Carbon"></button>
+                </div>
+              </div>
+            </div>
+
+            <span class="field-label field-label-row">Pilih Fokus Aksi Harianmu (Maks. 3) <em class="habit-counter" id="habit-counter" aria-live="polite">3/3 dipilih</em></span>
+            <div class="habit-options">
+              <label class="habit-pill">
+                <input type="checkbox" class="habit-check" value="Bawa Tumbler & Kotak Bekal" checked />
+                <span> Bawa Tumbler & Bekal</span>
+              </label>
+              <label class="habit-pill">
+                <input type="checkbox" class="habit-check" value="Hemat Listrik & Cabut Charger" checked />
+                <span> Hemat Daya & Gawai</span>
+              </label>
+              <label class="habit-pill">
+                <input type="checkbox" class="habit-check" value="Pilah Sampah Kertas & Plastik" checked />
+                <span> Pilah Sampah Teratur</span>
+              </label>
+              <label class="habit-pill">
+                <input type="checkbox" class="habit-check" value="Jalan Kaki / Sepeda Jarak Dekat" />
+                <span> Mobilitas Rendah Emisi</span>
+              </label>
+            </div>
+
+            <button type="button" id="hold-commit-btn" class="btn-hold-tactile" aria-label="Tekan dan tahan untuk mengunci komitmen">
+              <span id="hold-fill" class="hold-fill"></span>
+              <span id="hold-text" class="hold-text">Tekan dan tahan 1,5 detik untuk mengunci</span>
+            </button>
+          </div>
+
+          <div class="canvas-preview-card">
+            <div class="pass-stage" id="pass-stage"><div class="pass-card">
+              <canvas id="action-canvas" width="1200" height="760" class="action-canvas" role="img" aria-label="Pratinjau Paspor Aksi REKA lengkap dengan kode QR"></canvas>
+              <span class="pass-sheen" aria-hidden="true"></span>
+            </div></div>
+            <div class="canvas-actions">
+              <button type="button" id="download-card-btn" class="btn-tactile btn-primary btn-magnetic" data-sfx="click">
+                ⬇ Unduh Kartu Aksi (.PNG)
+              </button>
+              <button type="button" id="share-card-btn" class="btn-tactile btn-secondary">Bagikan</button>
+            </div>
+            <p class="canvas-zoom-hint">Ketuk kartu untuk memperbesar</p>
+            <p class="qr-hint"> QR di kartu bisa discan kamera HP untuk menampilkan data paspor.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  <script src="../shared/audio.js"></script>
+  <script src="../shared/qr.js"></script>
+  <script src="../shared/logo-data.js"></script>
+  <script src="komitmen.js"></script>
+  <script src="../shared/magnetic.js"></script>
+  <script src="../shared/polish.js"></script>
+</body>
+</html>

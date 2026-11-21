@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="id" data-era="2026">
+<head>
+  <meta charset="UTF-8" />
+  <script>document.documentElement.classList.add('js');</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Preview: Peta Jalan & Kuis — REKA</title>
+  <link rel="stylesheet" href="../shared/variables.css" />
+  <link rel="stylesheet" href="../shared/base.css" />
+  <link rel="stylesheet" href="../shared/buttons.css" />
+  <link rel="stylesheet" href="roadmap.css" />
+  <link rel="stylesheet" href="../shared/mobile.css" />
+</head>
+<body>
+  <div id="confetti-layer" class="confetti-layer" aria-hidden="true"></div>
+  <section id="peta-jalan" class="section" data-spine>
+      <div class="container">
+        <div class="section-head">
+          <span class="mono-tag">Peta jalan</span>
+          <h2>Peta Jalan Transformasi & Uji Wawasan Iklim</h2>
+          <p>Pelajari tahapan realistis transisi menuju 2035, lalu uji pemahamanmu lewat kuis singkat 3 pertanyaan.</p>
+        </div>
+
+        <div class="roadmap-quiz-grid">
+          <div class="roadmap-card">
+            <div class="phase-tabs" role="tablist">
+              <button type="button" class="phase-tab active" data-phase="2026" data-sfx="click">Fase 1 · 2026</button>
+              <button type="button" class="phase-tab" data-phase="2030" data-sfx="click">Fase 2 · 2030</button>
+              <button type="button" class="phase-tab" data-phase="2035" data-sfx="click">Fase 3 · 2035</button>
+            </div>
+
+            <div class="phase-content" id="phase-display">
+              <span class="status-pill">Tahap inisiasi & audit</span>
+              <h3>2026: Membangun Kebiasaan & Data Dasar</h3>
+              <ul class="phase-list">
+                <li><strong>Audit Sampah & Daya Sekolah:</strong> Pemetaan volume plastik kantin dan jam puncak konsumsi listrik kelas.</li>
+                <li><strong>Gerakan Tumbler & Zero-Plastic:</strong> Mengurangi 70% sampah kemasan minuman sekali pakai di lingkungan sekolah.</li>
+                <li><strong>Peluncuran Bank Sampah QR:</strong> Integrasi poin tabungan daur ulang dengan koperasi siswa.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="quiz-card">
+            <div class="card-header-bar">
+              <span class="mono-tag">Kuis singkat, 5 soal</span>
+              <span id="quiz-progress-pill" class="status-pill">Soal 1 dari 5</span>
+            </div>
+
+            <div id="quiz-body">
+              <h3 id="quiz-question" class="quiz-q">Mengapa sisa makanan yang menumpuk di TPA berbahaya bagi iklim?</h3>
+              <div id="quiz-options" class="quiz-options">
+                <button type="button" class="quiz-opt-btn" data-opt="0">A. Menghasilkan gas metana (CH₄) 28x lebih kuat dari CO₂</button>
+                <button type="button" class="quiz-opt-btn" data-opt="1">B. Membuat air hujan berubah menjadi asam sulfat</button>
+                <button type="button" class="quiz-opt-btn" data-opt="2">C. Menghambat gelombang sinyal seluler di kota</button>
+              </div>
+              <p id="quiz-feedback" class="quiz-feedback"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  <script src="../shared/audio.js"></script>
+  <script src="roadmap.js"></script>
+  <script src="../shared/magnetic.js"></script>
+  <script src="../shared/polish.js"></script>
+</body>
+</html>

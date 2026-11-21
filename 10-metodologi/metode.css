@@ -1,0 +1,50 @@
+
+.method-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  counter-reset: method;
+  border-top: var(--border-thick) solid var(--ink-primary);
+}
+
+.method-card {
+  counter-increment: method;
+  padding: 1.4rem 1.6rem 0.4rem 0;
+  min-width: 0;
+}
+.method-card + .method-card { padding-left: 1.6rem; border-left: 2px solid var(--ink-primary); }
+
+.method-card::before {
+  content: counter(method, decimal-leading-zero);
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--accent-primary);
+  margin-bottom: 0.9rem;
+}
+
+.method-card h3 { margin: 0 0 0.8rem; font-size: clamp(1.2rem, 1.7vw, 1.45rem); font-weight: 700; line-height: 1.12; }
+.method-card p { margin: 0 0 0.85rem; font-size: 0.9rem; line-height: 1.65; color: var(--ink-muted); }
+.method-card p:last-child { margin-bottom: 0; }
+
+
+.method-card:nth-child(2) p:first-of-type {
+  padding: 0.85rem 1rem;
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  line-height: 1.75;
+  color: var(--ink-primary);
+  background: var(--bg-alt);
+  border-left: 2px solid var(--accent-primary);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+}
+
+@media (max-width: 900px) {
+  .method-grid { grid-template-columns: 1fr; }
+  .method-card, .method-card + .method-card { padding: 1.4rem 0 0.6rem; border-left: 0; }
+  .method-card + .method-card { border-top: 2px solid var(--ink-primary); }
+}
+
+
+.method-card .mono-num { font-variant-numeric: tabular-nums; }

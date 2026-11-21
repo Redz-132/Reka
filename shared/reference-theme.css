@@ -1,0 +1,92 @@
+
+:root {
+  --bg-paper: #f7f4e9;
+  --bg-alt: #eef0e3;
+  --surface-card: #fffdf5;
+  --ink-primary: #0b1c34;
+  --ink-muted: #405044;
+  --accent-primary: #4f9a32;
+  --accent-secondary: #367c2b;
+  --accent-highlight: #ffc20f;
+  --era-badge-bg: #fff1bb;
+  --era-badge-text: #203e1e;
+  --line: #d8dfca;
+  --line-strong: #b8c6a6;
+  --border-width: 1.5px;
+  --border-thick: 1.5px;
+  --shadow-sm: 0 2px 7px rgba(8, 24, 56, .08);
+  --shadow-md: 0 5px 14px rgba(8, 24, 56, .09);
+  --shadow-lg: 0 10px 24px rgba(8, 24, 56, .11);
+  --radius-sm: 9px;
+  --radius-md: 13px;
+  --radius-lg: 19px;
+}
+html[data-era="2035"] {
+  --bg-paper: #f7f6ec;
+  --bg-alt: #edf2e5;
+  --surface-card: #fffdf5;
+  --ink-primary: #0b1c34;
+  --ink-muted: #405044;
+  --accent-primary: #4f9a32;
+  --accent-secondary: #367c2b;
+  --era-badge-bg: #e6f3d8;
+  --era-badge-text: #214d22;
+}
+html { scroll-padding-top: 112px; }
+body { background: #f7f4e9; }
+.era-ribbon { display: none; }
+.progress-track { height: 3px; background: rgba(8, 24, 56, .08); }
+.progress-fill { background: #5c9d37; }
+.navbar-wrap {
+  padding: 15px clamp(14px, 5.5vw, 92px) 8px;
+  background: rgba(247, 244, 233, .96);
+  backdrop-filter: blur(12px);
+}
+.navbar {
+  max-width: 1468px;
+  width: 100%;
+  min-height: 74px;
+  padding: .45rem .65rem .45rem 1.1rem;
+  gap: .8rem;
+  border: 1.5px solid #0b1c34;
+  border-radius: 19px;
+  background: rgba(255, 253, 245, .94);
+  box-shadow: 0 3px 0 rgba(8, 24, 56, .08);
+}
+.brand-logo { height: 52px; }
+.nav-links { gap: .1rem; font-size: .84rem; }
+.nav-links a { padding: .5rem .68rem; border-radius: 11px; }
+.nav-links a:hover { background: #f0f4e6; border-color: transparent; }
+.nav-links a.active-link { background: #e9f2dd; border-color: transparent; }
+.nav-controls { gap: .55rem; }
+.morph-switcher { padding: 3px; border: 1px solid #8c9b87; border-radius: 15px; background: #f0f0e8; box-shadow: none; }
+.morph-thumb { top: 3px; left: 3px; height: calc(100% - 6px); border-radius: 12px; background: #dce4ce; }
+html[data-era="2035"] .morph-thumb { background: #3f8b24; }
+.mode-btn { min-height: 35px; padding: .35rem .92rem; color: #263647; font-family: var(--font-sans); font-size: .86rem; }
+.mode-btn.active { color: #fff; }
+.btn-icon-tactile { border-radius: 14px; box-shadow: none; }
+.section { padding-top: clamp(3.5rem, 7vw, 6rem); padding-bottom: clamp(3.5rem, 7vw, 6rem); }
+.section-alt { border-top: 1px solid #d1dbc4; border-bottom: 1px solid #d1dbc4; }
+.section-head .mono-tag { color: #4d8b2f; }
+.section-head h2 { color: #0b1c34; }
+.section-head p { color: #475648; }
+.btn-tactile { border-radius: 14px; box-shadow: 0 3px 0 rgba(8, 24, 56, .12); }
+.btn-tactile:hover { box-shadow: 0 5px 12px rgba(8, 24, 56, .12); }
+.btn-tactile:active { box-shadow: none; }
+.pilar-dashboard-bar, .sim-stage-card, .sim-controls-card, .roadmap-card, .commit-form-card, .canvas-preview-card, .verify-box { border-radius: 18px; box-shadow: 0 5px 16px rgba(8, 24, 56, .08); }
+.bento-flip-card { }
+.bento-inner { transform: none !important; transform-style: flat; transition: none; }
+.bento-flip-card:not(.flipped):hover .bento-inner { transform: translateY(-2px); }
+.bento-flip-card.flipped .bento-inner { transform: none; }
+.bento-front, .bento-back { transform: none !important; backface-visibility: visible; -webkit-backface-visibility: visible; transition: opacity .24s ease, transform .24s ease, visibility .24s ease; }
+.bento-front { opacity: 1; visibility: visible; pointer-events: auto; }
+.bento-back { opacity: 0; visibility: hidden; pointer-events: none; }
+.bento-flip-card.flipped .bento-front { opacity: 0; visibility: hidden; pointer-events: none; transform: translateY(-8px) !important; }
+.bento-flip-card.flipped .bento-back { opacity: 1; visibility: visible; pointer-events: auto; transform: none !important; }
+.pass-stage { }
+.pass-card, .pass-stage.is-tilting .pass-card { transform: none !important; transform-style: flat; }
+@media (max-width: 920px) {
+  .navbar-wrap { padding: 10px 14px 7px; }
+  .navbar { min-height: 66px; border-radius: 16px; }
+  .nav-links { background: #fffdf5; border: 1.5px solid #0b1c34; border-radius: 16px; box-shadow: 0 8px 18px rgba(8, 24, 56, .12); }
+}

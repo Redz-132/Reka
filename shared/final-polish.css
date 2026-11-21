@@ -1,0 +1,790 @@
+
+.hero-section {
+  padding: clamp(1.15rem, 1.7vw, 1.65rem) 0 clamp(1.1rem, 1.8vw, 1.7rem);
+  background: #f7f4e9;
+}
+
+.hero-grid {
+  width: min(1468px, calc(100% - 64px));
+  max-width: 1468px;
+  grid-template-columns: minmax(0, .96fr) minmax(0, 1.04fr);
+  align-items: stretch;
+  gap: clamp(1.15rem, 2vw, 1.9rem);
+}
+
+.hero-content {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: .15rem 0 .05rem;
+}
+
+.tag-pill {
+  margin-bottom: clamp(.7rem, 1vw, .95rem);
+  padding: .46rem .92rem;
+  font-size: .72rem;
+}
+
+.hero-title {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: .08em;
+  margin: 0 0 .85rem;
+  font-size: clamp(3rem, 4.45vw, 4.6rem);
+  line-height: .96;
+  letter-spacing: -.058em;
+}
+
+.hero-title-line {
+  display: block;
+  max-width: none;
+  white-space: normal;
+}
+
+.word-rotator-btn {
+  width: fit-content;
+  max-width: 100%;
+  margin-top: .02em;
+  padding: .055em .17em .075em;
+  border-radius: 11px;
+  font-size: clamp(1.65rem, 3.05vw, 3.1rem);
+  line-height: 1.08;
+  letter-spacing: -.05em;
+  white-space: nowrap;
+}
+
+.hero-desc {
+  max-width: 54ch;
+  margin: 0 0 1.05rem;
+  font-size: clamp(.94rem, 1.04vw, 1.07rem);
+  line-height: 1.48;
+}
+
+.hero-cta-row {
+  gap: .65rem;
+}
+
+.hero-cta-row .btn-tactile {
+  min-height: 48px;
+  padding: .68rem 1.05rem;
+  border-radius: 14px;
+  font-size: .86rem;
+}
+
+.hero-metrics {
+  width: 100%;
+  margin-top: auto;
+  padding: .7rem .58rem;
+  border-radius: 16px;
+}
+
+.metric-chip {
+  grid-template-columns: 30px minmax(0, 1fr);
+  column-gap: .42rem;
+  padding: .12rem .5rem;
+}
+
+.metric-chip + .metric-chip {
+  padding-left: .65rem;
+}
+
+.metric-icon {
+  font-size: 1.42rem;
+}
+
+.metric-tag {
+  font-size: .59rem;
+  line-height: 1.18;
+}
+
+.metric-chip .mono-num {
+  font-size: clamp(1.05rem, 1.55vw, 1.42rem);
+}
+
+.hero-visual-column {
+  gap: .68rem;
+  justify-content: flex-start;
+}
+
+.hero-visual-card {
+  border-radius: 18px;
+  box-shadow: 0 8px 22px rgba(8, 24, 56, .12);
+}
+
+.hero-map-art {
+  aspect-ratio: 720 / 522;
+  object-fit: cover;
+}
+
+.hero-pillar-banner {
+  min-height: 76px;
+  padding: .7rem .9rem;
+  border-radius: 16px;
+}
+
+.banner-leaf {
+  width: 38px;
+  height: 38px;
+  flex-basis: 38px;
+  font-size: 1.35rem;
+}
+
+.banner-action {
+  padding: .65rem .85rem;
+  border-radius: 12px;
+}
+
+.pilar-preview-strip {
+  padding: .1rem 0 clamp(1.15rem, 2vw, 1.8rem);
+  border-bottom: 1px solid #e0e3d5;
+  background: #f7f4e9;
+}
+
+.pilar-preview-strip .container {
+  width: min(1468px, calc(100% - 64px));
+  max-width: 1468px;
+}
+
+.pilar-preview-link {
+  border-radius: 13px;
+}
+
+.pilar-preview-link img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.pilar-preview-strip + #simulator {
+  padding-top: clamp(2.6rem, 4vw, 3.75rem);
+}
+
+@media (max-width: 1120px) and (min-width: 981px) {
+  .hero-grid {
+    grid-template-columns: minmax(0, .94fr) minmax(0, 1.06fr);
+    gap: 1.1rem;
+  }
+
+  .hero-title {
+    font-size: clamp(2.85rem, 4.55vw, 3.8rem);
+  }
+
+  .word-rotator-btn {
+    font-size: clamp(1.55rem, 2.85vw, 2.35rem);
+  }
+
+  .hero-metrics {
+    padding-inline: .35rem;
+  }
+
+  .metric-chip {
+    grid-template-columns: 25px minmax(0, 1fr);
+    column-gap: .3rem;
+    padding-inline: .28rem;
+  }
+
+  .metric-chip + .metric-chip {
+    padding-left: .35rem;
+  }
+}
+
+@media (max-width: 980px) {
+  .hero-section {
+    padding-top: 1.35rem;
+  }
+
+  .hero-grid {
+    width: min(760px, calc(100% - 36px));
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.35rem;
+  }
+
+  .hero-content {
+    padding: 0;
+  }
+
+  .hero-title {
+    font-size: clamp(3rem, 7vw, 4.35rem);
+  }
+
+  .word-rotator-btn {
+    font-size: clamp(1.75rem, 4.7vw, 2.7rem);
+  }
+
+  .hero-metrics {
+    margin-top: 1.25rem;
+  }
+
+  .hero-visual-column {
+    width: 100%;
+    max-width: 760px;
+    margin: 0 auto;
+  }
+
+  .pilar-preview-strip .container {
+    width: min(760px, calc(100% - 36px));
+  }
+}
+
+@media (max-width: 600px) {
+  .hero-grid {
+    width: calc(100% - 32px);
+    gap: 1.15rem;
+  }
+
+  .hero-title {
+    font-size: clamp(2.65rem, 10vw, 3.65rem);
+    line-height: .98;
+  }
+
+  .word-rotator-btn {
+    font-size: clamp(1.45rem, 6vw, 2.1rem);
+    white-space: normal;
+  }
+
+  .hero-desc {
+    font-size: .94rem;
+  }
+
+  .hero-cta-row .btn-tactile {
+    flex: 1 1 calc(50% - .4rem);
+    min-width: 0;
+    justify-content: center;
+    padding-inline: .7rem;
+    font-size: .8rem;
+  }
+
+  .hero-metrics {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    padding: .56rem .28rem;
+  }
+
+  .metric-chip {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    justify-items: center;
+    padding: .35rem .18rem;
+    text-align: center;
+  }
+
+  .metric-chip + .metric-chip {
+    padding-left: .18rem;
+    border-top: 0;
+    border-left: 1px solid #b7bcae;
+  }
+
+  .metric-icon {
+    grid-column: 1;
+    grid-row: 1;
+    margin-bottom: .15rem;
+    font-size: 1.12rem;
+  }
+
+  .metric-tag {
+    grid-column: 1;
+    grid-row: 2;
+    min-height: 2.25em;
+    font-size: .54rem;
+  }
+
+  .metric-chip .mono-num {
+    grid-column: 1;
+    grid-row: 3;
+    font-size: 1rem;
+  }
+
+  .hero-pillar-banner {
+    flex-wrap: wrap;
+  }
+
+  .banner-copy {
+    flex: 1 1 calc(100% - 56px);
+  }
+
+  .banner-action {
+    margin-left: 3rem;
+  }
+
+  .pilar-preview-strip {
+    display: none;
+  }
+
+  .pilar-preview-strip + #simulator {
+    padding-top: 2.5rem;
+  }
+}
+
+.hero-section {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding: clamp(1.25rem, 2vw, 1.9rem) 0 clamp(1.5rem, 2.4vw, 2.2rem);
+  background: #f7f4e9;
+}
+
+.hero-section::before {
+  background-image: linear-gradient(90deg, rgba(248, 246, 235, .12) 0%, rgba(248, 246, 235, .04) 44%, rgba(248, 246, 235, 0) 74%), url("../assets/reka-hero-city-2d.webp");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  opacity: 1;
+}
+
+.hero-grid {
+  width: min(1468px, calc(100% - 64px));
+  grid-template-columns: minmax(0, .98fr) minmax(0, 1.02fr);
+  align-items: center;
+  gap: clamp(1.1rem, 2vw, 1.8rem);
+}
+
+.hero-content {
+  padding: .1rem 0;
+  align-self: center;
+  text-shadow: 0 1px 0 rgba(255, 253, 245, .42);
+}
+
+.hero-title {
+  margin-bottom: .72rem;
+  font-size: clamp(3rem, 4.25vw, 4.55rem);
+  line-height: .97;
+}
+
+.hero-title-line {
+  max-width: 11ch;
+}
+
+.word-rotator-btn {
+  box-shadow: 0 3px 0 rgba(8, 24, 56, .18);
+}
+
+.hero-desc {
+  max-width: 48ch;
+  margin-bottom: .95rem;
+  text-shadow: 0 1px 0 rgba(255, 253, 245, .7);
+}
+
+.hero-cta-row .btn-tactile {
+  min-height: 48px;
+}
+
+.hero-metrics {
+  margin-top: clamp(1.1rem, 1.8vw, 1.55rem);
+}
+
+.hero-visual-column {
+  gap: 0;
+  align-self: center;
+}
+
+.hero-visual-card {
+  border: 1.5px solid rgba(11, 28, 52, .9);
+  border-radius: 21px;
+  box-shadow: 0 14px 32px rgba(8, 24, 56, .16), 0 2px 0 rgba(255,255,255,.72) inset;
+  background: #d8edef;
+}
+
+.hero-map-art {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 720 / 522;
+  object-fit: cover;
+}
+
+.pilar-preview-strip {
+  padding: clamp(1.35rem, 2.2vw, 2rem) 0 clamp(1.7rem, 2.8vw, 2.4rem);
+  background: #f7f4e9;
+  border-top: 1px solid rgba(184, 198, 166, .5);
+  border-bottom: 1px solid #e0e3d5;
+}
+
+.pilar-preview-strip .container {
+  width: min(1468px, calc(100% - 64px));
+  max-width: 1468px;
+}
+
+.pilar-preview-layout {
+  display: grid;
+  grid-template-columns: minmax(230px, .8fr) minmax(0, 2.6fr);
+  align-items: center;
+  gap: clamp(1.1rem, 2.2vw, 2rem);
+}
+
+.pilar-preview-intro {
+  min-width: 0;
+  padding: .25rem 0;
+}
+
+.pilar-preview-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: .42rem;
+  margin-bottom: .55rem;
+  padding: .32rem .68rem;
+  border-radius: 999px;
+  background: #c8ef84;
+  color: #214c22;
+  font-size: .66rem;
+  font-weight: 850;
+  letter-spacing: .045em;
+}
+
+.pilar-preview-intro h2 {
+  max-width: 13ch;
+  margin: 0 0 .55rem;
+  color: #0b1c34;
+  font-size: clamp(1.45rem, 2.2vw, 2.15rem);
+  font-weight: 850;
+  line-height: 1.04;
+  letter-spacing: -.045em;
+}
+
+.pilar-preview-intro p {
+  max-width: 32ch;
+  margin: 0 0 .65rem;
+  color: #405044;
+  font-size: .88rem;
+  line-height: 1.42;
+}
+
+.pilar-preview-all {
+  display: inline-flex;
+  align-items: center;
+  gap: .45rem;
+  color: #214d22;
+  font-size: .83rem;
+  font-weight: 850;
+}
+
+.pilar-preview-all span {
+  transition: transform .2s ease;
+}
+
+.pilar-preview-all:hover span {
+  transform: translateX(4px);
+}
+
+.pilar-preview-cards {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(.6rem, 1vw, .9rem);
+  min-width: 0;
+}
+
+.pilar-preview-card {
+  display: block;
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid #b9c8ac;
+  border-radius: 17px;
+  background: #fffdf5;
+  box-shadow: 0 4px 12px rgba(8, 24, 56, .08);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.pilar-preview-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 9px 18px rgba(8, 24, 56, .12);
+}
+
+.pilar-preview-image {
+  position: relative;
+  height: clamp(94px, 8.2vw, 124px);
+  overflow: hidden;
+  background: #e4edda;
+}
+
+.pilar-preview-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.pilar-preview-card-copy {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 64px;
+  gap: .13rem;
+  padding: .6rem 2rem .62rem .72rem;
+}
+
+.pilar-preview-card-copy strong {
+  overflow: hidden;
+  color: #0b1c34;
+  font-size: clamp(.72rem, .88vw, .86rem);
+  font-weight: 850;
+  line-height: 1.24;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.pilar-preview-card-copy small {
+  overflow: hidden;
+  color: #576557;
+  font-size: clamp(.62rem, .75vw, .72rem);
+  line-height: 1.2;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.pilar-preview-card-copy > span {
+  position: absolute;
+  right: .6rem;
+  bottom: .65rem;
+  display: grid;
+  width: 23px;
+  height: 23px;
+  place-items: center;
+  border-radius: 50%;
+  background: #0b1c34;
+  color: #fff;
+  font-size: .82rem;
+  font-weight: 800;
+}
+
+.pilar-preview-strip + #simulator {
+  padding-top: clamp(2.8rem, 4vw, 4rem);
+}
+
+@media (max-width: 1120px) and (min-width: 981px) {
+  .hero-grid {
+    grid-template-columns: minmax(0, .93fr) minmax(0, 1.07fr);
+    gap: 1rem;
+  }
+  .hero-title {
+    font-size: clamp(2.7rem, 4vw, 3.7rem);
+  }
+  .word-rotator-btn {
+    font-size: clamp(1.55rem, 2.75vw, 2.35rem);
+  }
+  .pilar-preview-layout {
+    grid-template-columns: minmax(190px, .72fr) minmax(0, 2.8fr);
+  }
+}
+
+@media (max-width: 980px) {
+  .hero-section::before {
+    background-position: 56% center;
+  }
+  .hero-grid {
+    width: min(760px, calc(100% - 36px));
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+  .hero-content {
+    width: 100%;
+  }
+  .hero-visual-column {
+    width: 100%;
+    max-width: 760px;
+    margin: 0 auto;
+  }
+  .hero-metrics {
+    margin-top: 1.15rem;
+  }
+  .pilar-preview-layout {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .pilar-preview-intro h2 {
+    max-width: 22ch;
+  }
+  .pilar-preview-intro p {
+    max-width: 56ch;
+  }
+  .pilar-preview-cards {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+  .pilar-preview-strip .container {
+    width: min(760px, calc(100% - 36px));
+  }
+}
+
+@media (max-width: 640px) {
+  .hero-section::before {
+    background-image: linear-gradient(180deg, rgba(248, 246, 235, .22) 0%, rgba(248, 246, 235, .48) 100%), url("../assets/reka-hero-city-2d.webp");
+    background-size: cover;
+    background-position: 58% center;
+  }
+  .hero-grid {
+    width: calc(100% - 32px);
+    gap: 1rem;
+  }
+  .hero-title {
+    font-size: clamp(2.65rem, 10vw, 3.7rem);
+  }
+  .word-rotator-btn {
+    font-size: clamp(1.4rem, 5.8vw, 2.05rem);
+    white-space: normal;
+  }
+  .hero-desc {
+    max-width: 52ch;
+  }
+  .hero-visual-card {
+    border-radius: 16px;
+  }
+  .pilar-preview-cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: .7rem;
+  }
+  .pilar-preview-image {
+    height: 112px;
+  }
+  .pilar-preview-card-copy {
+    min-height: 61px;
+  }
+  .pilar-preview-card-copy strong {
+    font-size: .78rem;
+  }
+  .pilar-preview-card-copy small {
+    font-size: .66rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .pilar-preview-strip {
+    display: block;
+  }
+}
+
+.hero-section {
+  padding-top: clamp(1.35rem, 2.1vw, 2rem);
+  padding-bottom: clamp(1.45rem, 2.2vw, 2rem);
+  background: linear-gradient(110deg, #fbf8ee 0%, #f7f5eb 48%, #edf4eb 100%);
+}
+
+.hero-section::before {
+  background-image:
+    linear-gradient(90deg,
+      rgba(250, 248, 238, .88) 0%,
+      rgba(250, 248, 238, .82) 32%,
+      rgba(250, 248, 238, .70) 62%,
+      rgba(250, 248, 238, .60) 100%),
+    url("../assets/reka-hero-city-2d.webp");
+  background-size: cover;
+  background-position: center 54%;
+  opacity: 1;
+}
+
+.hero-grid {
+  grid-template-columns: minmax(0, .98fr) minmax(0, 1.02fr);
+  align-items: center;
+  gap: clamp(1.4rem, 2.5vw, 2.4rem);
+}
+
+.hero-content {
+  align-self: center;
+  padding: .5rem 0;
+  text-shadow: none;
+}
+
+.hero-title {
+  font-size: clamp(3rem, 4.2vw, 4.45rem);
+  line-height: .98;
+  margin-bottom: .8rem;
+}
+
+.hero-desc {
+  max-width: 49ch;
+  text-shadow: none;
+}
+
+.hero-visual-column {
+  width: 100%;
+  max-width: 710px;
+  justify-self: end;
+  align-self: center;
+  position: relative;
+  isolation: isolate;
+}
+
+.hero-visual-column::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 7% -2% 5%;
+  border-radius: 34px;
+  background: radial-gradient(ellipse at 55% 48%, rgba(144, 190, 151, .20), rgba(171, 211, 217, .12) 56%, transparent 78%);
+  filter: blur(15px);
+}
+
+.hero-visual-card {
+  border: 0;
+  border-radius: 14px;
+  overflow: hidden;
+  background: transparent;
+  box-shadow: 0 12px 30px rgba(8, 24, 56, .10);
+}
+
+.hero-map-art {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 720 / 522;
+  object-fit: contain;
+  border-radius: 14px;
+}
+
+.hero-metrics {
+  margin-top: clamp(1.2rem, 1.9vw, 1.7rem);
+  background: rgba(255, 254, 248, .94);
+  border-color: rgba(166, 187, 143, .88);
+  box-shadow: 0 5px 18px rgba(35, 57, 34, .07);
+}
+
+.pilar-preview-strip {
+  position: relative;
+  padding-top: clamp(1.65rem, 2.5vw, 2.35rem);
+  background: linear-gradient(180deg, #f7f5eb 0%, #f5f4e9 100%);
+  border-top: 1px solid rgba(177, 191, 160, .42);
+}
+
+.pilar-preview-layout {
+  align-items: center;
+}
+
+.pilar-preview-card {
+  box-shadow: 0 3px 10px rgba(8, 24, 56, .055);
+}
+
+@media (max-width: 1120px) and (min-width: 981px) {
+  .hero-grid {
+    grid-template-columns: minmax(0, .96fr) minmax(0, 1.04fr);
+    gap: 1.2rem;
+  }
+  .hero-visual-column {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 980px) {
+  .hero-section::before {
+    background-image:
+      linear-gradient(180deg, rgba(250, 248, 238, .88) 0%, rgba(250, 248, 238, .76) 58%, rgba(250, 248, 238, .62) 100%),
+      url("../assets/reka-hero-city-2d.webp");
+    background-position: 58% center;
+  }
+  .hero-visual-column {
+    max-width: 760px;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero-section::before {
+    background-image:
+      linear-gradient(180deg, rgba(250, 248, 238, .90) 0%, rgba(250, 248, 238, .80) 58%, rgba(250, 248, 238, .68) 100%),
+      url("../assets/reka-hero-city-2d.webp");
+    background-position: 60% center;
+  }
+  .hero-visual-card,
+  .hero-map-art {
+    border-radius: 12px;
+  }
+  .pilar-preview-strip {
+    padding-top: 1.35rem;
+  }
+}

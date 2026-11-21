@@ -1,0 +1,141 @@
+/* Perubahan visual kota mengikuti tahun dan setiap slider simulasi. */
+.sim-scene-frame {
+  --scene-quality: .5;
+  --scene-transition: .7;
+  --scene-transport: .5;
+  --scene-energy: .5;
+  --scene-plastic: .5;
+  --scene-food: .5;
+  isolation: isolate;
+}
+.sim-scene-frame .sim-city-image-base,
+.sim-scene-frame .sim-city-image {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 54%;
+  transition: filter .55s ease, opacity .55s ease, transform .8s ease;
+}
+.sim-scene-frame .sim-city-image-base {
+  z-index: 0;
+  filter: saturate(calc(.68 + var(--scene-quality) * .20))
+          sepia(calc(.10 - var(--scene-quality) * .07)) brightness(.94) contrast(1.05);
+}
+.sim-scene-frame .sim-city-image {
+  z-index: 1;
+  opacity: var(--scene-transition, .7);
+  filter: saturate(calc(.76 + var(--scene-quality) * .50))
+          brightness(calc(.88 + var(--scene-quality) * .15)) contrast(1.04);
+}
+.sim-scene-frame[data-era="2026"] .sim-city-image {
+  filter: saturate(calc(.68 + var(--scene-quality) * .48))
+          sepia(calc(.12 - var(--scene-quality) * .09))
+          brightness(calc(.84 + var(--scene-quality) * .14)) contrast(1.06);
+}
+.sim-scene-frame[data-era="2035"] .sim-city-image {
+  filter: saturate(calc(.82 + var(--scene-quality) * .48))
+          brightness(calc(.90 + var(--scene-quality) * .14)) contrast(1.04);
+}
+.sim-scene-frame[data-era="2026"] .sim-city-image-base { filter: saturate(.82) sepia(.08) brightness(.94) contrast(1.05); }
+.sim-scene-frame[data-era="2035"] .sim-city-image-base { filter: saturate(.76) sepia(.04) brightness(.90) contrast(1.04); }
+.sim-scene-frame::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  opacity: 1;
+  background:
+    radial-gradient(ellipse at 18% 78%, rgba(74, 151, 67, calc(var(--scene-transport) * .22)), transparent 35%),
+    radial-gradient(ellipse at 78% 30%, rgba(255, 192, 59, calc(var(--scene-energy) * .14)), transparent 34%),
+    radial-gradient(ellipse at 53% 86%, rgba(54, 164, 190, calc(var(--scene-plastic) * .18)), transparent 38%),
+    radial-gradient(ellipse at 88% 78%, rgba(94, 169, 60, calc(var(--scene-food) * .20)), transparent 32%),
+    linear-gradient(180deg, rgba(116, 83, 44, calc((1 - var(--scene-quality)) * .28)), rgba(97, 71, 36, .04) 46%, rgba(71, 58, 33, calc((1 - var(--scene-quality)) * .30)));
+  transition: opacity .5s ease;
+}
+.sim-scene-frame:hover .sim-city-image-base,
+.sim-scene-frame:hover .sim-city-image { transform: scale(1.018); }
+.sim-image-caption { z-index: 4; }
+.sim-scene-frame .city-svg { z-index: -1 !important; }
+.sim-impact-overlay {
+  position: absolute;
+  z-index: 4;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 7px;
+  pointer-events: none;
+}
+.sim-impact-card {
+  --impact-level: .5;
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-width: 0;
+  gap: 7px;
+  padding: 7px 8px 9px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,.86);
+  border-radius: 11px;
+  background: rgba(255,253,246,.92);
+  box-shadow: 0 4px 14px rgba(8,24,56,.15);
+  backdrop-filter: blur(7px);
+  transition: background .3s ease, border-color .3s ease, transform .3s ease, opacity .3s ease;
+}
+.sim-impact-card::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 4px;
+  width: calc(var(--impact-level) * 100%);
+  background: linear-gradient(90deg, #f6b51d, #82be45);
+  transition: width .35s ease;
+}
+.sim-impact-card img {
+  flex: 0 0 40px;
+  width: 40px;
+  height: 37px;
+  object-fit: cover;
+  border-radius: 7px;
+  filter: saturate(.64);
+  transition: filter .3s ease, transform .3s ease;
+}
+.sim-impact-card span { display: grid; gap: 2px; min-width: 0; }
+.sim-impact-card b {
+  color: #10243a;
+  font-size: .62rem;
+  line-height: 1.1;
+  white-space: nowrap;
+}
+.sim-impact-card small {
+  color: #657363;
+  font-size: .54rem;
+  line-height: 1.15;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.sim-impact-card.is-active {
+  background: rgba(241,248,230,.96);
+  border-color: rgba(98,157,63,.72);
+  transform: translateY(-2px);
+}
+.sim-impact-card.is-active img { filter: saturate(1.12); transform: scale(1.035); }
+.sim-impact-card.is-strong { background: rgba(231,244,214,.98); border-color: #6eaa43; }
+.sim-scene-frame[data-era="2026"] .sim-impact-card:not(.is-active) { background: rgba(255,247,231,.94); }
+@media (max-width: 720px) {
+  .sim-impact-overlay { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px; }
+  .sim-impact-card { padding: 6px 7px 8px; }
+  .sim-impact-card img { flex-basis: 34px; width: 34px; height: 31px; }
+  .sim-impact-card b { font-size: .58rem; }
+  .sim-impact-card small { font-size: .5rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .sim-scene-frame .sim-city-image, .sim-impact-card, .sim-impact-card img, .sim-impact-card::after { transition: none; }
+}

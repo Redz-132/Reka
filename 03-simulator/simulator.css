@@ -1,0 +1,144 @@
+.preset-bar {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.75rem;
+}
+.preset-bar .mono-tag { margin-right: 0.5rem; color: var(--ink-muted); }
+
+.simulator-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+  gap: clamp(1rem, 2.4vw, 2rem);
+  align-items: start;
+}
+
+.sim-stage-card, .sim-controls-card {
+  background: var(--surface-card);
+  border: var(--border-width) solid var(--ink-primary);
+  border-radius: var(--radius-lg);
+  padding: clamp(1rem, 2vw, 1.6rem);
+  transition: background-color 0.5s ease;
+}
+
+.sim-hud-top {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 0.5rem 1rem;
+  margin-bottom: 1rem;
+}
+
+.hud-badge { display: flex; flex-direction: column; gap: 0.1rem; font-size: 0.7rem; font-weight: 700; color: var(--ink-muted); text-transform: uppercase; letter-spacing: 0.08em; font-family: var(--font-mono); }
+.hud-badge strong { font-size: clamp(1.9rem, 3.4vw, 2.6rem); color: var(--ink-primary); line-height: 1; letter-spacing: -0.04em; text-transform: none; }
+
+#era-bonus-pill { justify-self: start; }
+
+
+.score-meter {
+  grid-column: 1 / -1;
+  position: relative;
+  height: 6px;
+  border-radius: 3px;
+  background: repeating-linear-gradient(to right, var(--line-strong) 0 1px, transparent 1px 10%) , var(--bg-alt);
+  overflow: hidden;
+}
+.score-meter i {
+  position: absolute;
+  inset: 0;
+  background: var(--accent-primary);
+  transform-origin: left center;
+  transform: scaleX(calc(var(--score, 50) / 100));
+  transition: transform 0.7s var(--ease-out), background-color 0.4s ease;
+}
+
+.mono-pill {
+  display: inline-block;
+  padding: 0.28rem 0.65rem;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--ink-primary);
+  background: var(--bg-alt);
+  border: 2px solid var(--ink-primary);
+  border-radius: var(--radius-sm);
+}
+
+.city-svg {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-md);
+  display: block;
+}
+
+.sim-results-bar {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-top: 1.1rem;
+  border-top: var(--border-thick) solid var(--ink-primary);
+}
+
+.result-box {
+  padding: 0.95rem 0 0.2rem;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+.result-box + .result-box { padding-left: 1.2rem; border-left: 2px solid var(--ink-primary); }
+
+.result-label { color: var(--ink-muted); }
+.result-box .mono-num {
+  font-size: clamp(1.25rem, 2.2vw, 1.75rem);
+  font-weight: 700;
+  color: var(--ink-primary);
+  margin: 0.4rem 0 0.2rem;
+  white-space: nowrap;
+}
+.result-sub { font-size: 0.78rem; color: var(--ink-muted); font-weight: 500; }
+
+.control-group { padding: 1.15rem 0; border-bottom: 2px solid var(--ink-primary); }
+.control-group:first-child { padding-top: 0.2rem; }
+.control-group:last-of-type { border-bottom: 0; }
+
+.control-label-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.75rem;
+  font-weight: 700;
+  font-size: 0.92rem;
+  margin-bottom: 0.4rem;
+}
+
+.slider-ticks {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.4rem;
+  font-size: 0.68rem;
+  line-height: 1.25;
+  color: var(--ink-faint);
+  margin-top: 0.2rem;
+}
+.slider-ticks span { flex: 1 1 0; }
+.slider-ticks span:first-child { text-align: left; }
+.slider-ticks span:last-child { text-align: right; }
+.slider-ticks span:not(:first-child):not(:last-child) { text-align: center; }
+
+.sim-controls-card .btn-full { margin-top: 0.75rem; }
+
+@media (max-width: 960px) {
+  .simulator-layout { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 680px) {
+  .sim-stage-card { position: sticky; top: calc(var(--nav-clearance) - 20px); z-index: 20; }
+  .sim-hud-top { grid-template-columns: auto 1fr; }
+  #score-badge { justify-self: end; }
+  #era-bonus-pill { grid-column: 1 / -1; }
+}
+
+
+.sim-stage-card, .sim-controls-card { box-shadow: var(--shadow-md); border-radius: var(--radius-lg); }
+.mono-pill { box-shadow: var(--shadow-sm); background: var(--amber-100); }
+.result-box .mono-num, .metric-chip .mono-num { font-variant-numeric: tabular-nums; font-feature-settings: 'tnum' 1; }

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="id" data-era="2035">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Preview: Hero 2D — REKA</title>
+  <link rel="stylesheet" href="../shared/variables.css" />
+  <link rel="stylesheet" href="../shared/base.css" />
+  <link rel="stylesheet" href="../shared/buttons.css" />
+  <link rel="stylesheet" href="hero.css" />
+  <link rel="stylesheet" href="../shared/mobile.css" />
+  <link rel="stylesheet" href="../shared/reference-theme.css" />
+  <link rel="stylesheet" href="../shared/final-polish.css" />
+</head>
+<body>
+  <section id="hero" class="section hero-section">
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <div class="tag-pill" id="hero-tag-pill"><span class="dot-live" id="hero-dot"></span><span id="era-status-text">KOTA SIRKULAR INDONESIA</span></div>
+        <h1 class="hero-title" id="hero-title-main"><span class="hero-title-line">Rancang Hari<br>Esok Lewat</span><button type="button" id="word-rotator" class="word-rotator-btn" title="Klik untuk ganti fokus">Kota Sirkular 2035 ↻</button></h1>
+        <p class="hero-desc" id="hero-desc">Selamat datang di tahun 2035! Indonesia kini melangkah lebih hijau, dengan kota-kota yang mandiri, bersih, dan berkelanjutan untuk generasi mendatang.</p>
+        <div class="hero-cta-row"><a href="#simulator" class="btn-tactile btn-primary"><span>Mulai Eksplorasi</span><span>→</span></a><button type="button" id="hero-era-jump-btn" class="btn-tactile btn-secondary"><span>Lihat Dampak</span><span>▥</span></button></div>
+        <div class="hero-metrics">
+          <div class="metric-chip"><span class="metric-icon" aria-hidden="true">🌿</span><span class="metric-tag" id="metric-tag-1">Energi Bersih</span><span class="mono-num" id="hero-metric-1">95%</span><span class="metric-label" id="hero-label-1">Energi Bersih</span></div>
+          <div class="metric-chip"><span class="metric-icon" aria-hidden="true">♻️</span><span class="metric-tag" id="metric-tag-2">Pengelolaan Sampah</span><span class="mono-num" id="hero-metric-2">100%</span><span class="metric-label" id="hero-label-2">Pengelolaan Sampah</span></div>
+          <div class="metric-chip"><span class="metric-icon" aria-hidden="true">🌳</span><span class="metric-tag" id="metric-tag-3">Kualitas Udara</span><span class="mono-num" id="hero-metric-3">142 AQI</span><span class="metric-label" id="hero-label-3">Udara Sehat</span></div>
+        </div>
+      </div>
+      <div class="hero-visual-column">
+        <div class="hero-visual-card"><img class="hero-map-art" src="../assets/reka-map-2d.webp" alt="Peta Indonesia untuk membandingkan kota dan indikator lingkungan" width="720" height="522" /></div>
+</div>
+    </div>
+  </section>
+  <script src="../shared/audio.js"></script>
+  <script src="hero.js"></script>
+</body>
+</html>

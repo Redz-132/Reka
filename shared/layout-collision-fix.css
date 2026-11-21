@@ -1,0 +1,151 @@
+/* Final layout repair: keep simulator layers in normal flow and comparison scenes in separate panes. */
+.sim-scene-frame {
+  position: relative !important;
+  display: block !important;
+  height: auto !important;
+  min-height: 0 !important;
+  aspect-ratio: 16 / 9 !important;
+  overflow: hidden !important;
+  isolation: isolate;
+  background: #e8f0e4 !important;
+}
+.sim-scene-frame .sim-city-image-base { display: none !important; }
+.sim-scene-frame .sim-city-image {
+  position: absolute !important;
+  inset: 0 !important;
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center 56% !important;
+  filter: saturate(calc(.70 + var(--scene-quality, .35) * .50))
+          sepia(calc((1 - var(--scene-quality, .35)) * .095))
+          brightness(calc(.91 + var(--scene-quality, .35) * .10))
+          contrast(1.035) !important;
+  transform: none !important;
+  opacity: 1 !important;
+  transition: filter .45s ease, opacity .22s ease !important;
+}
+.sim-scene-frame .sim-city-image.is-changing { opacity: .2 !important; }
+.sim-scene-frame::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(180deg, rgba(9, 29, 45, .02) 45%, rgba(9, 29, 45, calc((1 - var(--scene-quality, .35)) * .18)) 100%);
+}
+.sim-scene-frame::after { z-index: 2; pointer-events: none; }
+.sim-image-caption { z-index: 3 !important; }
+.sim-impact-overlay {
+  position: static !important;
+  inset: auto !important;
+  z-index: auto !important;
+  display: grid !important;
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  gap: .55rem !important;
+  margin: .72rem 0 .15rem !important;
+  padding: 0 !important;
+  pointer-events: auto !important;
+}
+.sim-impact-card {
+  min-width: 0;
+  min-height: 66px;
+  display: flex !important;
+  align-items: center !important;
+  gap: .5rem !important;
+  padding: .55rem .62rem .62rem !important;
+  border: 1px solid rgba(111, 145, 89, .3) !important;
+  border-radius: 13px !important;
+  background: linear-gradient(145deg, #fffdf6, #f0f6e8) !important;
+  box-shadow: 0 3px 10px rgba(8, 24, 56, .06) !important;
+  backdrop-filter: none !important;
+  transform: none !important;
+}
+.sim-impact-card img {
+  flex: 0 0 42px !important;
+  width: 42px !important;
+  height: 42px !important;
+  object-fit: cover !important;
+  border-radius: 9px !important;
+}
+.sim-impact-card span { display: grid; gap: .13rem; min-width: 0; }
+.sim-impact-card b { font-size: .67rem !important; white-space: normal !important; }
+.sim-impact-card small { font-size: .59rem !important; white-space: normal !important; overflow-wrap: anywhere; }
+.sim-scene-foot { position: relative; z-index: 1; margin-top: .15rem; }
+
+/* Split comparison: two independent image panes, never stacked on top of each other. */
+.ba-stage {
+  position: relative !important;
+  display: block !important;
+  height: clamp(390px, 34vw, 520px) !important;
+  min-height: 360px !important;
+  aspect-ratio: auto !important;
+  overflow: hidden !important;
+  isolation: isolate;
+  background: #dce9df !important;
+}
+.ba-stage .ba-layer {
+  position: absolute !important;
+  top: 0 !important;
+  bottom: 0 !important;
+  height: 100% !important;
+  overflow: hidden !important;
+  clip-path: none !important;
+  transition: left .28s ease, width .28s ease, filter .35s ease !important;
+}
+.ba-stage .ba-before {
+  left: 0 !important;
+  right: auto !important;
+  width: var(--pos, 50%) !important;
+  z-index: 2 !important;
+}
+.ba-stage .ba-after {
+  left: var(--pos, 50%) !important;
+  right: 0 !important;
+  width: auto !important;
+  z-index: 1 !important;
+}
+.ba-stage .ba-scene-image {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+}
+.ba-stage .ba-before-image { object-position: 67% center !important; }
+.ba-stage .ba-after .ba-scene-image { object-position: 31% center !important; }
+.ba-stage .ba-handle {
+  left: 0 !important;
+  z-index: 6 !important;
+  margin-left: -28px !important;
+  width: 56px !important;
+  transform-origin: center center;
+}
+.ba-stage .ba-handle::before {
+  left: 50% !important;
+  width: 3px !important;
+  transform: translateX(-50%);
+  background: rgba(255,255,255,.98) !important;
+  box-shadow: 0 0 0 1px rgba(8,24,56,.18) !important;
+}
+.ba-stage .ba-badge { z-index: 4 !important; }
+.ba-stage[data-focus="2026"] .ba-after { filter: saturate(.83) brightness(.94); }
+.ba-stage[data-focus="2035"] .ba-before { filter: saturate(.83) brightness(.94); }
+
+@media (max-width: 900px) {
+  .sim-impact-overlay { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+  .ba-stage { height: clamp(330px, 58vw, 450px) !important; min-height: 300px !important; }
+}
+@media (max-width: 620px) {
+  .sim-impact-overlay { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; gap: .42rem !important; }
+  .sim-impact-card { min-height: 58px; padding: .45rem .5rem .5rem !important; }
+  .sim-impact-card img { flex-basis: 34px !important; width: 34px !important; height: 34px !important; }
+  .sim-impact-card b { font-size: .61rem !important; }
+  .sim-impact-card small { font-size: .54rem !important; }
+  .ba-stage { height: 320px !important; min-height: 320px !important; }
+  .ba-stage .ba-handle { width: 48px !important; margin-left: -24px !important; }
+  .ba-stage .ba-knob { width: 42px !important; height: 42px !important; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .sim-scene-frame .sim-city-image, .ba-stage .ba-layer { transition: none !important; }
+}

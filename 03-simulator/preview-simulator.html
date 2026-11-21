@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="id" data-era="2026">
+<head>
+  <meta charset="UTF-8" />
+  <script>document.documentElement.classList.add('js');</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Preview: Lab Simulasi — REKA</title>
+  <link rel="stylesheet" href="../shared/variables.css" />
+  <link rel="stylesheet" href="../shared/base.css" />
+  <link rel="stylesheet" href="../shared/buttons.css" />
+  <link rel="stylesheet" href="simulator.css" />
+  <link rel="stylesheet" href="../shared/mobile.css" />
+</head>
+<body>
+  <div id="confetti-layer" class="confetti-layer" aria-hidden="true"></div>
+  <section id="simulator" class="section">
+      <div class="container">
+        <div class="section-head">
+          <span class="mono-tag">Lab simulasi</span>
+          <h2>Uji Kebiasaanmu, Lihat Wajah Kota Berubah</h2>
+          <p>Geser keempat parameter harian di bawah ini atau pilih preset skenario untuk melihat reaksi ekosistem secara langsung.</p>
+        </div>
+
+        <div class="preset-bar">
+          <span class="mono-tag" style="margin:0;">Pilihan cepat</span>
+          <button type="button" class="btn-tactile btn-secondary btn-sm" data-preset="boros" data-sfx="click"> Gaya Boros</button>
+          <button type="button" class="btn-tactile btn-secondary btn-sm" data-preset="rata2" data-sfx="click"> Pelajar 2026</button>
+          <button type="button" class="btn-tactile btn-secondary btn-sm" data-preset="adiwiyata" data-sfx="click"> Sekolah Hijau</button>
+          <button type="button" class="btn-tactile btn-accent btn-sm" data-preset="2035" data-sfx="click"> Target Net-Zero 2035</button>
+        </div>
+
+        <div class="simulator-layout">
+          <div class="sim-stage-card">
+            <div class="sim-hud-top">
+              <div class="hud-badge">
+                <span>Skor ekosistem</span>
+                <strong id="stat-score" class="mono-num">52/100</strong>
+              </div>
+              <span id="era-bonus-pill" class="mono-pill">Infrastruktur 2026 (1,0x)</span>
+              <span id="score-badge" class="status-pill">Transisi hijau</span>
+              <div class="score-meter" aria-hidden="true"><i></i></div>
+            </div>
+
+            <svg id="city-svg" viewBox="0 0 800 400" class="city-svg" role="img" aria-label="Simulasi ekosistem kota yang berubah mengikuti kebiasaanmu"><use id="sim-b-skyback" href="#rk-b-skyback"/><use id="sim-a-skyback" href="#rk-a-skyback" opacity="0"/><use href="#rk-base"/><use id="sim-b-energy" href="#rk-b-energy"/><use id="sim-a-energy" href="#rk-a-energy" opacity="0"/><use id="sim-b-trash" href="#rk-b-trash"/><use id="sim-a-trash" href="#rk-a-trash" opacity="0"/><use id="sim-b-green" href="#rk-b-green"/><use id="sim-a-green" href="#rk-a-green" opacity="0"/><use id="sim-b-traffic" href="#rk-b-traffic"/><use id="sim-a-traffic" href="#rk-a-traffic" opacity="0"/><use id="sim-b-water" href="#rk-b-water"/><use id="sim-a-water" href="#rk-a-water" opacity="0"/><use id="sim-b-haze" href="#rk-b-haze"/><use id="sim-a-haze" href="#rk-a-haze" opacity="0"/><rect width="800" height="400" fill="url(#rkVig)"/><rect width="800" height="400" filter="url(#rkGrain)" style="mix-blend-mode:overlay"/></svg>
+
+            <div class="sim-results-bar">
+              <div class="result-box">
+                <span class="result-label">Emisi ditekan / tahun</span>
+                <strong id="stat-co2" class="mono-num">420 kg CO₂e</strong>
+                <span id="stat-trees-eq" class="result-sub">Setara 19 pohon dewasa</span>
+              </div>
+              <div class="result-box">
+                <span class="result-label">Plastik dihindari / tahun</span>
+                <strong id="stat-plastic" class="mono-num">14,5 kg</strong>
+                <span id="stat-bottles-eq" class="result-sub">± 725 botol plastik</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="sim-controls-card">
+            <div class="control-group">
+              <div class="control-label-row">
+                <label for="slider-transport">1. Mobilitas ke Sekolah</label>
+                <span id="val-transport" class="mono-pill">Motor Pribadi</span>
+              </div>
+              <input type="range" id="slider-transport" class="tactile-slider" min="1" max="4" value="2" />
+              <div class="slider-ticks">
+                <span>Mobil</span><span>Motor</span><span>Angkutan</span><span>Sepeda/Jalan</span>
+              </div>
+            </div>
+
+            <div class="control-group">
+              <div class="control-label-row">
+                <label for="slider-plastic">2. Wadah Makan & Minum</label>
+                <span id="val-plastic" class="mono-pill">Kadang Tumbler</span>
+              </div>
+              <input type="range" id="slider-plastic" class="tactile-slider" min="1" max="4" value="2" />
+              <div class="slider-ticks">
+                <span>Sekali Pakai</span><span>Campur</span><span>Bawa Botol</span><span>100% Guna Ulang</span>
+              </div>
+            </div>
+
+            <div class="control-group">
+              <div class="control-label-row">
+                <label for="slider-energy">3. Disiplin Energi & Gawai</label>
+                <span id="val-energy" class="mono-pill">Standar Rumah</span>
+              </div>
+              <input type="range" id="slider-energy" class="tactile-slider" min="1" max="4" value="2" />
+              <div class="slider-ticks">
+                <span>Boros Daya</span><span>Standar</span><span>Hemat Listrik</span><span>Panel Surya</span>
+              </div>
+            </div>
+
+            <div class="control-group">
+              <div class="control-label-row">
+                <label for="slider-food">4. Pengelolaan Sisa Makanan</label>
+                <span id="val-food" class="mono-pill">Habiskan Porsi</span>
+              </div>
+              <input type="range" id="slider-food" class="tactile-slider" min="1" max="4" value="3" />
+              <div class="slider-ticks">
+                <span>Sering Sisa</span><span>Kadang Sisa</span><span>Habis</span><span>Kompos Aktif</span>
+              </div>
+            </div>
+
+            <button type="button" id="preset-max-btn" class="btn-tactile btn-accent btn-full btn-magnetic" data-sfx="click">
+               Aktifkan Skenario Maksimal 2035
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+  <script src="../shared/audio.js"></script>
+  <script src="simulator.js"></script>
+  <script src="../shared/magnetic.js"></script>
+  <script src="../shared/polish.js"></script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="id" data-era="2026">
+<head>
+  <meta charset="UTF-8" />
+  <script>document.documentElement.classList.add('js');</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Preview: Dampak Sekolah — REKA</title>
+  <link rel="stylesheet" href="../shared/variables.css" />
+  <link rel="stylesheet" href="../shared/base.css" />
+  <link rel="stylesheet" href="../shared/buttons.css" />
+  <link rel="stylesheet" href="skala.css" />
+  <link rel="stylesheet" href="../shared/mobile.css" />
+</head>
+<body>
+  <div id="confetti-layer" class="confetti-layer" aria-hidden="true"></div>
+  <section id="skala-sekolah" class="section">
+      <div class="container">
+        <div class="section-head">
+          <span class="mono-tag">Dampak sekolah</span>
+          <h2>Satu Kebiasaan Kecil × Satu Sekolah = Perubahan Nyata</h2>
+          <p>Aksi individu menjadi kekuatan besar saat dilakukan bersama. Geser jumlah siswa di sekolahmu untuk menghitung proyeksi dampak kolektif selama <strong>1 tahun</strong> dan akumulasi menuju <strong>2035 (10 tahun)</strong>.</p>
+        </div>
+
+        <div class="scale-card">
+          <div class="scale-slider-header">
+            <div>
+              <label for="school-size-slider" class="scale-title">Jumlah Pelajar yang Terlibat di Sekolah:</label>
+              <p class="scale-sub">Terhubung otomatis dengan parameter kebiasaan yang kamu atur di Lab Simulasi.</p>
+            </div>
+            <div class="scale-count-badge">
+              <strong id="school-size-val" class="mono-num">600</strong>
+              <span>SISWA</span>
+            </div>
+          </div>
+
+          <input type="range" id="school-size-slider" class="tactile-slider" min="100" max="1500" step="50" value="600" />
+          <div class="slider-ticks">
+            <span>100 Siswa (1 Angkatan)</span>
+            <span>600 Siswa (1 Sekolah)</span>
+            <span>1.000 Siswa</span>
+            <span>1.500 Siswa (Kampus Besar)</span>
+          </div>
+
+          <div class="scale-metrics-grid">
+            <div class="scale-box">
+              <span class="mono-tag">Emisi CO₂ ditekan (10 thn)</span>
+              <strong id="scale-co2-10y" class="mono-num">2.520 Ton</strong>
+              <span id="scale-co2-1y" class="scale-note">252 Ton CO₂e / tahun</span>
+            </div>
+            <div class="scale-box">
+              <span class="mono-tag">Penghematan listrik sekolah</span>
+              <strong id="scale-rupiah-1y" class="mono-num">Rp 268 Jt/thn</strong>
+              <span id="scale-kwh-1y" class="scale-note">186.000 kWh energi dihemat</span>
+            </div>
+            <div class="scale-box">
+              <span class="mono-tag">Sampah plastik dihindari</span>
+              <strong id="scale-plastic-10y" class="mono-num">87,0 Ton</strong>
+              <span id="scale-plastic-1y" class="scale-note">8.700 kg / tahun bebas TPA</span>
+            </div>
+            <div class="scale-box">
+              <span class="mono-tag">Ekuivalen hutan kota</span>
+              <strong id="scale-forest-area" class="mono-num">11.450 m²</strong>
+              <span class="scale-note">Setara luas serapan karbon tahunan</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  <script src="../shared/audio.js"></script>
+  <script src="skala.js"></script>
+  <script src="../shared/magnetic.js"></script>
+  <script src="../shared/polish.js"></script>
+</body>
+</html>

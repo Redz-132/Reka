@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="id" data-era="2026">
+<head>
+  <meta charset="UTF-8" />
+  <script>document.documentElement.classList.add('js');</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Preview: Navbar — REKA</title>
+  <link rel="stylesheet" href="../shared/variables.css" />
+  <link rel="stylesheet" href="../shared/base.css" />
+  <link rel="stylesheet" href="../shared/buttons.css" />
+  <link rel="stylesheet" href="navbar.css" />
+  <link rel="stylesheet" href="../shared/mobile.css" />
+</head>
+<body>
+  <div id="confetti-layer" class="confetti-layer" aria-hidden="true"></div>
+  <div class="era-ribbon" id="era-ribbon">
+    <strong>Tampilan 2026.</strong> Pindah ke 2035 lewat sakelar di kanan atas, atau tekan tombol E.</div>
+  <div class="progress-track" aria-hidden="true">
+    <div id="scroll-progress" class="progress-fill"></div>
+  </div>
+  <header class="navbar-wrap">
+    <nav class="navbar" aria-label="Navigasi Utama">
+      <a href="#hero" class="brand" data-sfx="click">
+        <img class="brand-logo" src="../assets/logo-reka.png" alt="REKA, Rancang Hari Esok Lewat Kebiasaan Kecil" width="102" height="58" />
+      </a>
+
+      <div class="nav-links" id="nav-links">
+        <a href="#simulator" data-sfx="click">Lab Simulasi</a>
+        <a href="#eksplorasi" data-sfx="click">Bandingkan Kota</a>
+        <a href="#skala-sekolah" data-sfx="click">Dampak Sekolah</a>
+        <a href="#pilar" data-sfx="click">6 Pilar Aksi</a>
+        <a href="#peta-jalan" data-sfx="click">Peta Jalan & Kuis</a>
+        <a href="#komitmen" data-sfx="click">Paspor Aksi</a>
+      </div>
+
+      <div class="nav-controls">
+        <div class="morph-switcher" id="mode-switcher" role="group" aria-label="Pilih Era Simulasi">
+          <div class="morph-thumb" id="morph-thumb"></div>
+          <button type="button" class="mode-btn active" data-era="2026" aria-pressed="true">2026</button>
+          <button type="button" class="mode-btn" data-era="2035" aria-pressed="false">2035</button>
+        </div>
+
+        <button type="button" id="audio-toggle" class="btn-icon-tactile" title="Suara Efek Tombol">
+          <span id="audio-icon"></span>
+          <span id="audio-label" class="hide-mobile">SFX</span>
+        </button>
+
+        <button type="button" id="menu-toggle" class="btn-icon-tactile show-mobile" aria-label="Buka Menu" aria-expanded="false" aria-controls="nav-links"><svg class="ico-menu" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" fill="none"/></svg></button>
+      </div>
+    </nav>
+  </header>
+  <script src="../shared/audio.js"></script>
+  <script src="navbar.js"></script>
+  <script src="../shared/magnetic.js"></script>
+  <script src="../shared/polish.js"></script>
+</body>
+</html>

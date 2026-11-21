@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="id" data-era="2026">
+<head>
+  <meta charset="UTF-8" />
+  <script>document.documentElement.classList.add('js');</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Preview: Bandingkan Kota — REKA</title>
+  <link rel="stylesheet" href="../shared/variables.css" />
+  <link rel="stylesheet" href="../shared/base.css" />
+  <link rel="stylesheet" href="../shared/buttons.css" />
+  <link rel="stylesheet" href="scrubber.css" />
+  <link rel="stylesheet" href="../shared/mobile.css" />
+</head>
+<body>
+  <div id="confetti-layer" class="confetti-layer" aria-hidden="true"></div>
+  <section id="eksplorasi" class="section section-alt">
+      <div class="container">
+        <div class="section-head">
+          <span class="mono-tag">Bandingkan kota</span>
+          <h2>Geser Tirai: Kawasan 2026 vs REKA 2035</h2>
+          <p>Tarik pegangan kuning di tengah atau gunakan tombol posisi cepat untuk membandingkan kondisi lingkungan konvensional dengan tata ruang sirkular 2035.</p>
+        </div>
+
+        <div class="scrubber-toolbar">
+          <button type="button" class="btn-tactile btn-secondary btn-sm" data-snap="10" data-sfx="click">◀ Fokus 2035</button>
+          <button type="button" class="btn-tactile btn-secondary btn-sm" data-snap="50" data-sfx="click">50 / 50 Tengah</button>
+          <button type="button" class="btn-tactile btn-secondary btn-sm" data-snap="90" data-sfx="click">Fokus 2026 ▶</button>
+        </div>
+
+        <div id="ba-container" class="ba-stage">
+          <div class="ba-layer ba-after">
+            <span class="ba-badge ba-badge-right">Sesudah, 2035 · 27°C</span>
+            <svg viewBox="0 0 800 400" preserveAspectRatio="xMidYMax slice" class="ba-svg" role="img" aria-label="Ilustrasi kawasan kota tahun 2035: turbin angin, panel surya, pohon rindang, bus listrik, sungai jernih"><use href="#scene-after"/></svg>
+          </div>
+
+          <div id="ba-before-wrapper" class="ba-layer ba-before">
+            <span class="ba-badge ba-badge-left">Sebelum, 2026 · 34°C</span>
+            <svg id="ba-before-svg" viewBox="0 0 800 400" preserveAspectRatio="xMidYMax slice" class="ba-svg" role="img" aria-label="Ilustrasi kawasan kota tahun 2026: asap pabrik, kabel semrawut, macet, sampah, sungai keruh"><use href="#scene-before"/></svg>
+          </div>
+
+          <div id="ba-handle" class="ba-handle" role="slider" aria-label="Geser Perbandingan" aria-valuemin="5" aria-valuemax="95" aria-valuenow="50" tabindex="0">
+            <div class="ba-knob">⇄</div>
+          </div>
+        </div>
+
+        <div class="ba-delta-grid">
+          <div class="delta-card">
+            <span class="mono-tag">Suhu mikro kawasan</span>
+            <strong>34°C → 27°C (-7°C)</strong>
+            <p>Kanopi pohon & atap reflektif menurunkan efek pulau bahang perkotaan.</p>
+          </div>
+          <div class="delta-card">
+            <span class="mono-tag">Kemandirian energi</span>
+            <strong>14% → 100% EBT</strong>
+            <p>Panel surya atap sekolah menyuplai kebutuhan ruang kelas & laboratorium.</p>
+          </div>
+          <div class="delta-card">
+            <span class="mono-tag">Sampah ke TPA</span>
+            <strong>100% Campur → 95% Terpilah</strong>
+            <p>Sistem bank sampah QR dan kompos kantin memangkas residu TPA.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  <script src="../shared/audio.js"></script>
+  <script src="scrubber.js"></script>
+  <script src="../shared/magnetic.js"></script>
+  <script src="../shared/polish.js"></script>
+</body>
+</html>

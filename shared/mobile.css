@@ -1,0 +1,130 @@
+@media (max-width: 640px) {
+  .section { padding: clamp(3rem, 12vw, 4rem) 0; }
+
+  .era-ribbon {
+    font-size: 0.68rem;
+    line-height: 1.4;
+    padding: 0.45rem 0.8rem;
+  }
+
+  .preset-bar {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.55rem;
+  }
+  .preset-bar > :first-child:not(.btn-tactile) { grid-column: 1 / -1; }
+  .preset-bar .btn-tactile { width: 100%; padding-left: 0.5rem; padding-right: 0.5rem; }
+
+  .ba-stage { height: 320px; }
+  .ba-badge {
+    top: 10px;
+    max-width: 46%;
+    padding: 0.3rem 0.6rem;
+    font-size: 0.6rem;
+    line-height: 1.25;
+  }
+  .ba-badge-left { left: 10px; }
+  .ba-badge-right { right: 10px; }
+
+  .tactile-input, select.tactile-input { font-size: 16px; }
+  .metric-tag, .pilar-status-badge { font-size: 0.72rem; }
+
+  .footer { padding: 2rem 0 2.5rem; }
+  .footer-actions { display: flex; flex-wrap: wrap; gap: 0.6rem; width: 100%; }
+  .footer-actions .btn-tactile { flex: 1 1 calc(50% - 0.3rem); }
+
+  .reka-toast { bottom: calc(1rem + env(safe-area-inset-bottom, 0px)); }
+
+  .action-canvas { cursor: zoom-in; }
+  .canvas-zoom-hint { display: block; }
+}
+
+.canvas-zoom-hint {
+  display: none;
+  margin: 0.55rem 0 0;
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  font-weight: 700;
+  color: var(--accent-primary);
+}
+
+@media (pointer: coarse) {
+  .mode-btn { min-height: 40px; padding-left: 1rem; padding-right: 1rem; }
+  .btn-icon-tactile { min-height: 44px; min-width: 44px; justify-content: center; }
+  .btn-sm, .filter-chip, .adopt-btn, .phase-tab, .quiz-opt-btn { min-height: 44px; }
+  .phase-tab { min-height: 56px; }
+  .habit-pill { min-height: 46px; }
+  .habit-pill input { width: 24px; height: 24px; }
+  .theme-dot { width: 42px; height: 42px; }
+
+  .tactile-slider { height: 44px; --half: 17px; }
+  .tactile-slider::-webkit-slider-thumb { width: 34px; height: 34px; margin-top: -15px; }
+  .tactile-slider::-moz-range-thumb { width: 30px; height: 30px; }
+  .ba-handle { width: 72px; margin-left: -36px; }
+  .ba-knob { width: 52px; height: 52px; }
+
+  .btn-hold-tactile {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    padding: 1.25rem 1rem;
+  }
+
+  * { -webkit-tap-highlight-color: transparent; }
+}
+
+@media (hover: none) {
+  .btn-tactile:hover { transform: none; box-shadow: none; }
+  .btn-tactile:active { transform: scale(0.97); box-shadow: none; }
+  .habit-pill:hover { transform: none; }
+  .bento-flip-card:not(.flipped):hover .bento-inner { transform: none; }
+  .quiz-opt-btn:hover { transform: none; }
+}
+
+.card-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  background: rgba(4, 14, 34, 0.97);
+  overflow: hidden;
+}
+
+.card-lightbox img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: min(calc(100dvh - 110px), calc((100vw - 24px) / 0.6333));
+  max-width: none;
+  height: auto;
+  transform: translate(-50%, -50%) rotate(90deg);
+  border-radius: 14px;
+}
+
+.card-lightbox button {
+  position: absolute;
+  left: 50%;
+  bottom: calc(1rem + env(safe-area-inset-bottom, 0px));
+  transform: translateX(-50%);
+}
+
+.card-lightbox p {
+  position: absolute;
+  top: 0.9rem;
+  left: 0;
+  right: 0;
+  margin: 0;
+  text-align: center;
+  color: #FFFFFF;
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+}
+
+@media (orientation: landscape) {
+  .card-lightbox img {
+    width: min(calc(100vw - 24px), calc((100dvh - 90px) / 0.6333));
+    transform: translate(-50%, -50%);
+  }
+}
+
+@media (max-width: 640px) {
+  .footer-actions .btn-tactile { white-space: nowrap; padding-left: 0.6rem; padding-right: 0.6rem; }
+}
